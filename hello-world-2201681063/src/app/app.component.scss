@@ -1,0 +1,76 @@
+main {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+footer {
+  min-height: 40vh;
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: var(--clr-accent);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .5rem;
+
+  &:has(.menu-item:hover) > .menu-item:not(:hover) {
+    scale: .8;
+    opacity: .5;
+  }
+}
+
+.container {
+  --padding: 1rem * 2;
+  --max-width: 32rem;
+  width: min(100% - var(--padding), var(--max-width));
+  margin-inline: auto;
+}
+
+.menu-item {
+  cursor: pointer;
+  color: #FFF;
+  background: var(--clr-primary);
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  transition: all .3s ease;
+}
+
+.item-title {
+  font-weight: bold;
+}
+
+.item-content {
+  margin-top: 5px;
+  padding-left: 10px;
+  border-left: 2px solid #ccc;
+}
+
+
+/* Layered Waves */
+
+.spacer {
+  aspect-ratio: 960/200;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.layer {
+  background-image: url('../assets/layeredWaves.svg');
+}
+
+.flip {
+  transform: rotate(180deg);
+}
