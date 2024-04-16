@@ -2,11 +2,11 @@ main {
   display: grid;
   justify-items: center;
   align-items: center;
-  min-height: 60vh;
+  height: 60svh;
 }
 
 footer {
-  min-height: 40vh;
+  height: 40svh;
 }
 
 h1 {
@@ -22,7 +22,8 @@ h1 {
   grid-template-columns: 1fr;
   gap: .5rem;
 
-  &:has(.menu-item:hover) > .menu-item:not(:hover) {
+  &:has(.menu-item:hover) > .menu-item:not(:hover),
+  &:has(.menu-item:focus) > .menu-item:not(:focus){
     scale: .8;
     opacity: .5;
   }
@@ -42,8 +43,13 @@ h1 {
   padding: 1rem;
   text-align: center;
   font-size: 1.25rem;
+  max-height: 100px;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   transition: all .3s ease;
+}
+
+.menu-item[aria-expanded="true"] {
+  max-height: 300px;
 }
 
 .item-title {
@@ -53,8 +59,21 @@ h1 {
 .item-content {
   margin-top: 5px;
   padding-left: 10px;
-  border-left: 2px solid #ccc;
+  border-left: 2px solid #ccc;;
+  transition: max-height .3s ease;
 }
+
+.item-link {
+  color: var(--clr-accent);
+  text-decoration: none;
+  font-weight: bold;
+  &:hover,
+  &:focus {
+    color: red;
+    text-decoration: underline;
+  }
+}
+
 
 
 /* Layered Waves */

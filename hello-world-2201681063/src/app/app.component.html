@@ -1,13 +1,13 @@
 <main>
   <h1>BOBKATA OFFICIAL</h1>
-  <div class="menu container" role="menu">
+  <div class="menu container" role="menu"> 
     @for (item of menuItems; track $index) {
-    <div class="menu-item" role="menuitem" [attr.aria-expanded]="item.isOpen ? 'true' : 'false'"
-      (click)="toggleItem($index)">
+    <div tabindex="0" class="menu-item" role="menuitem" [attr.aria-expanded]="item.isOpen ? 'true' : 'false'"
+    (keydown.enter)="toggleItem($index)" (click)="toggleItem($index)" >
       <h2 class="item-title">{{ item.title }}</h2>
 
       @if (item.isOpen) {
-      <article class="item-content">{{ item.content }}</article>
+      <article class="item-content {{item.isOpen ? 'open' : ''}}" role="tabpanel">{{ item.content }}</article>
       @if (item.nestedList) {
         <ul role="list">
           @for (item of item.nestedList; track $index) {
