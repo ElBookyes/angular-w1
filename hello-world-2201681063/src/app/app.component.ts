@@ -14,7 +14,7 @@ export class AppComponent {
 
   menuItems = [
     { title: 'За мен', 
-      content: 'Аз съм Бобката ама някой ми викат Гопката. Топ 15 съм в CS 1.6 и съм roblox милионер.', 
+      content: 'Аз съм Бобката ама някои ми викат Гопката. Топ 15 съм в CS 1.6 и съм roblox милионер.', 
       isOpen: false,
     },
 
